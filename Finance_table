@@ -1,0 +1,32 @@
+ -- Create the "finance" table
+CREATE TABLE finance (
+    student_id INT PRIMARY KEY,
+    fees_status VARCHAR(20) NOT NULL,
+    percentage DECIMAL(5, 2) NOT NULL,
+    placement_status VARCHAR(20) NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+
+-- Insert 20 rows of sample data
+INSERT INTO finance (student_id, fees_status, percentage, placement_status)
+VALUES
+    (1, 'Paid', 85.50, 'Placed'),
+    (2, 'Paid', 90.25, 'Placed'),
+    (3, 'Pending', 75.60, 'Not Placed'),
+    (4, 'Paid', 82.75, 'Placed'),
+    (5, 'Paid', 78.90, 'Not Placed'),
+    (6, 'Paid', 89.40, 'Placed'),
+    (7, 'Paid', 91.20, 'Placed'),
+    (8, 'Pending', 68.75, 'Not Placed'),
+    (9, 'Paid', 87.10, 'Placed'),
+    (10, 'Paid', 80.00, 'Not Placed'),
+    (11, 'Paid', 88.80, 'Placed'),
+    (12, 'Paid', 92.15, 'Placed'),
+    (13, 'Pending', 72.30, 'Not Placed'),
+    (14, 'Paid', 86.75, 'Placed'),
+    (15, 'Paid', 79.90, 'Not Placed'),
+    (16, 'Paid', 90.00, 'Placed'),
+    (17, 'Paid', 84.25, 'Placed'),
+    (18, 'Pending', 70.80, 'Not Placed'),
+    (19, 'Paid', 87.60, 'Placed'),
+    (20, 'Paid', 81.50, 'Not Placed');
