@@ -1,0 +1,95 @@
+--Calculate the total Cost spent by each student.
+  SELECT student_id, SUM(cost) AS total_Cost FROM purchases GROUP BY student_id;
+
+--Find the average price per item in the "purchases" table:
+  SELECT AVG(price) AS average_price FROM purchases;
+
+--To find the top 3 students and their percentages
+  SELECT concat(s.first_name," " , s.last_name) , f.percentage
+  FROM students s inner 
+  JOIN finance f ON s.student_id = f.student_id
+  order by percentage desc limit 3;
+
+--To find item which has the highest sum of cost
+  select electronics_item, sum(cost) from purchases group by electrnics_item order by total_cost desc limit 1;
+
+--To find the information of the students whose name starts with j and have scored more than 75%
+  select concat(s.first_name , " ", s.last_name) , s.student_id
+  from students as s inner join finance as f
+  on s.student_id = f.student_id
+  where s.first_name like 'j%' and f.percentage>75;
+
+--Display the names of students who have paid their fees and are placed.
+  SELECT first_name, last_name
+  FROM students s
+  JOIN finance f ON s.student_id = f.student_id
+  WHERE f.fees_status = 'Paid' AND f.placement_status = 'Placed';
+
+--Find the total cost of purchases made in each region.
+  SELECT region, SUM(cost) AS total_cost
+  FROM purchases
+  GROUP BY region;
+
+--Find the average cost of electronics items purchased by male and female students.
+  SELECT gender, AVG(cost) AS average_cost
+  FROM students s
+  JOIN purchases p ON s.first_name = p.first_name AND s.last_name = p.last_name
+  GROUP BY gender;
+
+
+--List the names of students who bought a laptop and their passing year is 2022.
+  SELECT first_name, last_name
+  FROM students s
+  JOIN purchases p ON s.first_name = p.first_name AND s.last_name = p.last_name
+  WHERE electronics_item = 'laptop' AND passing_year = 2022;
+
+
+--Calculate the average percentage of students who are placed among those who have paid their fees.
+  SELECT AVG(percentage) AS average_placement_percentage
+  FROM finance
+  WHERE fees_status = 'Paid' AND placement_status = 'Placed';
+
+--Calculate the percentage of female students in each course who have passed their exams.
+  SELECT course, (COUNT(*) / (SELECT COUNT(*) FROM students WHERE gender = 'Female')) * 100 AS pass_percentage
+  FROM students
+  WHERE gender = 'Female' AND passing_year <= YEAR(CURDATE())
+  GROUP BY course;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
