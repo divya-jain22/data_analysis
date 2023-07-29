@@ -1,0 +1,41 @@
+
+This table is containing information about students name( first name and last name) , course they are doing , Entrance year, Passing year , age of the student and the gender of the student.
+The table consists of data of 20 students.
+
+-- Create the "students" table
+CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    course VARCHAR(50) NOT NULL,
+    entrance_year INT NOT NULL,
+    passing_year INT NOT NULL,
+    age INT NOT NULL,
+    gender VARCHAR(10) NOT NULL
+);
+
+-- Insert 20 rows of sample data
+INSERT INTO students (first_name, last_name, course, entrance_year, passing_year, age, gender)
+VALUES
+    ('John', 'Doe', 'Computer Science', 2018, 2022, 24, 'Male'),
+    ('Jane', 'Smith', 'Mathematics', 2019, 2023, 22, 'Female'),
+    ('Michael', 'Johnson', 'Physics', 2017, 2021, 26, 'Male'),
+    ('Emily', 'Williams', 'Chemistry', 2020, 2024, 21, 'Female'),
+    ('Robert', 'Brown', 'Biology', 2016, 2020, 27, 'Male'),
+    ('Emma', 'Jones', 'English Literature', 2018, 2022, 25, 'Female'),
+    ('William', 'Davis', 'History', 2019, 2023, 23, 'Male'),
+    ('Olivia', 'Martinez', 'Economics', 2017, 2021, 24, 'Female'),
+    ('James', 'Rodriguez', 'Psychology', 2020, 2024, 22, 'Male'),
+    ('Sophia', 'Garcia', 'Sociology', 2016, 2020, 26, 'Female'),
+    ('Alexander', 'Lopez', 'Political Science', 2018, 2022, 25, 'Male'),
+    ('Isabella', 'Hernandez', 'Geography', 2019, 2023, 23, 'Female'),
+    ('Ethan', 'Gonzalez', 'Engineering', 2017, 2021, 26, 'Male'),
+    ('Mia', 'Perez', 'Medicine', 2020, 2024, 22, 'Female'),
+    ('Daniel', 'Torres', 'Business Administration', 2016, 2020, 27, 'Male'),
+    ('Ava', 'Ramirez', 'Marketing', 2018, 2022, 24, 'Female'),
+    ('Matthew', 'Flores', 'Finance', 2019, 2023, 22, 'Male'),
+    ('Sofia', 'Rivera', 'Accounting', 2017, 2021, 25, 'Female'),
+    ('Logan', 'Gomez', 'Information Technology', 2020, 2024, 21, 'Male'),
+    ('Chloe', 'Gutierrez', 'Art', 2016, 2020, 26, 'Female');
+    
+    
